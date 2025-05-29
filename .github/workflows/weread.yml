@@ -43,8 +43,8 @@ jobs:
           pip install -r requirements.txt
       - name: weread book sync
         run: |
-         python book.py
+            book
       - name: weread sync
         run: |
-          python weread.py
+           weread
       
