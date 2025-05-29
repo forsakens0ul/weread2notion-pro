@@ -37,10 +37,22 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
+    
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Debug env vars
+        run: |
+          echo "NOTION_PAGE: $NOTION_PAGE"
+          echo "NOTION_TOKEN: $NOTION_TOKEN"
+          echo "WEREAD_COOKIE: $WEREAD_COOKIE"
+          echo "BOOK_DATABASE_NAME: $BOOK_DATABASE_NAME"
+          echo "CC_ID: $CC_ID"
+          echo "CC_PASSWORD: $CC_PASSWORD"
+          
+      
+            
       - name: weread book sync
         run: |
              python weread2notionpro/book.py
